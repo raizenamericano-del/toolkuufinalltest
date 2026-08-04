@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>⚡ All Tools KYY — 136 Tools Gratis Serba Ada</title>
+  <meta name="description" content="All-in-One Tools Portal by Rifkyy sensei — downloader, AI studio, games, command palette Ctrl+K, dan 120+ tools gratis lainnya." />
+  <meta name="theme-color" content="#070312" />
+  <link rel="icon" type="image/png" href="img/logo.png" />
+  <link rel="manifest" href="manifest.webmanifest?v=62" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="KYY Tools" />
+  <link rel="apple-touch-icon" href="img/pwa-192.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="⚡ All Tools KYY" />
+  <meta property="og:description" content="Serba ada, tinggal pencet — 120+ tools gratis + command palette by Rifkyy sensei" />
+  <meta property="og:image" content="img/hero-void.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Caveat:wght@500;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css?v=62" />
+  <link rel="stylesheet" href="css/void.css?v=62" />
+  <script>
+    // anti-kedip: pasang tema SEBELUM render pertama
+    try {
+      const t = localStorage.getItem('kyy_theme');
+      if (t === 'light') { document.documentElement.dataset.theme = 'light'; }
+    } catch (e) {}
+  </script>
+</head>
+<body class="intro-lock">
+
+  <!-- ==================== INTRO BOOT SEQUENCE ==================== -->
+  <div id="intro" aria-hidden="true">
+    <div class="intro-hex" aria-hidden="true"></div>
+    <div class="intro-core">
+      <div class="intro-medallion">
+        <span class="im-ring r1"></span>
+        <span class="im-ring r2"></span>
+        <img src="img/logo.png" class="intro-logo" alt="" />
+      </div>
+      <div class="intro-title">ALL TOOLS <b>KYY</b></div>
+      <div class="intro-tag">⚡ V E R S I &nbsp; 6 ⚡</div>
+      <div class="intro-sub">bentar… lagi nyiapin 136 senjata buat kamu</div>
+      <div class="intro-bar"><span id="introFill"></span></div>
+      <div class="intro-pct" id="introPct">0%</div>
+    </div>
+    <div class="intro-skip">tap di mana aja buat langsung masuk ⚡</div>
+  </div>
+
+  <!-- ===================== BACKGROUND FX ========================= -->
+  <div id="scrollProgress" aria-hidden="true"></div>
+  <div class="aurora" aria-hidden="true">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <span class="blob b3"></span>
+  </div>
+  <div class="grid-overlay" aria-hidden="true"></div>
+  <div class="void-vignette" aria-hidden="true"></div>
+  <canvas id="particles" aria-hidden="true"></canvas>
+
+  <!-- ========================= HEADER ============================ -->
+  <header id="navbar">
+    <div class="nav-inner">
+      <a class="brand" href="#top" aria-label="Beranda KYY">
+        <span class="brand-med">
+          <img src="img/logo.png" alt="Logo KYY" class="brand-logo" />
+          <i class="brand-orbit"></i>
+        </span>
+        <div class="brand-text">
+          <span class="brand-name">ALL TOOLS <b>KYY</b></span>
+          <span class="brand-sub">serba bisa · rifkyy sensei</span>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="#tools">Tools</a>
+        <a href="#info">Radar</a>
+        <a href="#dev">Dev</a>
+      </nav>
+      <button id="paletteBtn" class="palette-btn" title="Command Palette (Ctrl+K)" aria-label="Buka command palette">
+        ⌘ <kbd>Ctrl K</kbd>
+      </button>
+      <button id="themeBtn" class="theme-btn" title="Ganti tema" aria-label="Ganti tema">🌙</button>
+      <div class="status-pill" id="statusPill" title="Status server API">
+        <span class="pulse-dot"></span>
+        <span id="statusText">Connecting…</span>
+        <span class="latency" id="latencyText"></span>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ========================= HERO ============================ -->
+    <section class="hero">
+      <div class="hero-shell">
+        <!-- kiri: teks -->
+        <div class="hero-copy">
+          <div class="hero-kicker-row" data-anim style="--d:.05s">
+            <span class="hero-badge">⚡ v6.2 · 136 tools</span>
+            <span class="hero-badge alt">⚡ tanpa login · tanpa ribet</span>
+          </div>
+
+          <h1 class="hero-title big" data-anim style="--d:.16s">
+            <span class="glitch" data-text="BUTUH">BUTUH</span><br />
+            <span class="glitch" data-text="APA AJA.">APA AJA.</span><br />
+            <span class="grad-text">SATU PENCET.</span>
+          </h1>
+
+          <p class="hero-typed" data-anim style="--d:.3s">
+            <span id="typed"></span><span class="caret">▍</span>
+          </p>
+
+          <div class="hero-cta" data-anim style="--d:.44s">
+            <a href="#tools" class="btn btn-primary btn-glow">🚀 Buka Arsenal</a>
+            <button type="button" class="btn btn-ghost" id="randomToolBtn">🎲 Tool Random</button>
+          </div>
+
+          <div class="hero-hint" data-anim style="--d:.56s">
+            <span class="hh-chip">⌨️ tekan <kbd>Ctrl</kbd>+<kbd>K</kbd> buat command palette</span>
+            <span class="hh-chip">⭐ favorit & riwayat ke-simpen di HP-mu</span>
+          </div>
+        </div>
+
+        <!-- kanan: medallion + video -->
+        <div class="hero-visual" data-anim style="--d:.22s">
+          <div class="hv-medallion">
+            <span class="hv-ring one"></span>
+            <span class="hv-ring two"></span>
+            <span class="hv-ring three"></span>
+            <img src="img/logo.png" alt="SKY SINTAX" class="hv-logo" />
+            <span class="hv-glyph g1">☠</span>
+            <span class="hv-glyph g2">⛧</span>
+            <span class="hv-glyph g3">✦</span>
+            <span class="hv-glyph g4">✧</span>
+          </div>
+          <div class="hv-float-card fc-1"><b id="statToolsInline">120+</b><span>TOOLS</span></div>
+          <div class="hv-float-card fc-2"><b>24/7</b><span>ONLINE</span></div>
+          <div class="hero-video-card">
+            <div class="hvc-frame">
+              <video autoplay muted loop playsinline preload="auto" poster="img/hero-void.jpg">
+                <source src="video/hero.mp4" type="video/mp4" />
+                <source src="https://cdn.nekohime.site/file/690qd4z8.mp4" type="video/mp4" />
+              </video>
+              <span class="hvc-tag">▶ KYY REEL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a class="hero-scroll" href="#statsbar" aria-label="Scroll ke bawah">⌄</a>
+    </section>
+
+    <!-- ======================= STAT STRIP ======================== -->
+    <div class="wrap" id="statsbar">
+      <div class="stat-strip rv">
+        <div class="stat"><b data-count="100" id="statTools">0</b><span>TOOLS</span></div>
+        <div class="stat"><b data-count="4">0</b><span>KATEGORI</span></div>
+        <div class="stat"><b data-count="10">0</b><span>ENDPOINT BARU</span></div>
+        <div class="stat"><b>24/7</b><span>ONLINE</span></div>
+        <div class="stat"><b id="visitCount">1</b><span>KUNJUNGANMU</span></div>
+      </div>
+    </div>
+
+    <!-- ======================== MARQUEE ========================== -->
+    <div class="marquee-wrap" aria-hidden="true">
+      <div class="marquee">
+        <div class="mq-track">
+          <span>⚡ ALL TOOLS KYY</span><span class="mq-star">✦</span><span>🎬 CARI YOUTUBE</span><span class="mq-star">✦</span><span>🎧 SOUNDCLOUD PLAYER</span><span class="mq-star">✦</span><span>🪙 HARGA CRYPTO LIVE</span><span class="mq-star">✦</span><span>🌍 TRANSLATE INSTAN</span><span class="mq-star">✦</span><span>⌨️ TES WPM</span><span class="mq-star">✦</span><span>🔢 2048</span><span class="mq-star">✦</span><span>🎨 GRADIENT STUDIO</span><span class="mq-star">✦</span><span>⌘K COMMAND PALETTE</span><span class="mq-star">✦</span>
+        </div>
+      </div>
+      <div class="marquee mq-outline">
+        <div class="mq-track rev">
+          <span>GOD OF DEATH</span><span class="mq-star">✦</span><span>SERBA ADA</span><span class="mq-star">✦</span><span>TINGGAL PENCET</span><span class="mq-star">✦</span><span>TANPA IKLAN</span><span class="mq-star">✦</span><span>TANPA DRAMA</span><span class="mq-star">✦</span><span>GOD OF DEATH</span><span class="mq-star">✦</span><span>SERBA ADA</span><span class="mq-star">✦</span><span>TINGGAL PENCET</span><span class="mq-star">✦</span><span>TANPA IKLAN</span><span class="mq-star">✦</span><span>TANPA DRAMA</span><span class="mq-star">✦</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================= TOOLS =========================== -->
+    <section id="tools">
+      <div class="section-head rv">
+        <span class="sh-kicker">☠ arsenal chamber</span>
+        <h2>Pilih <span class="grad-text">Senjata</span> Kamu</h2>
+        <p>100+ tools gratis — filter kategori, search manual, atau bantai pakai <kbd>Ctrl+K</kbd>.</p>
+      </div>
+
+      <div class="whatsnew rv">
+        <span class="wn-label">✨ YANG BARU :</span>
+        <span class="wn-chip hot">🎬 Cari YouTube</span>
+        <span class="wn-chip hot">📖 Al-Quran</span>
+        <span class="wn-chip hot">🐦 X Downloader</span>
+        <span class="wn-chip hot">📚 Baca Manga</span>
+        <span class="wn-chip hot">✍️ Fancy Text</span>
+        <span class="wn-chip hot">🎧 SoundCloud</span>
+        <span class="wn-chip hot">🟢 Spotify Info</span>
+        <span class="wn-chip hot">🌍 Translate</span>
+        <span class="wn-chip hot">🪙 Crypto Live</span>
+        <span class="wn-chip hot">⌨️ Tes WPM</span>
+        <span class="wn-chip hot">🔢 2048</span>
+        <span class="wn-chip hot">🌈 Gradient Studio</span>
+        <span class="wn-chip">👤 Avatar Maker</span>
+        <span class="wn-chip">🪪 Identitas Palsu</span>
+        <span class="wn-chip">💱 Kurs Live</span>
+        <span class="wn-chip">📚 Cari Buku</span>
+        <span class="wn-chip">⌘K Palette</span>
+      </div>
+
+      <div class="toolbar glass rv">
+        <div class="tabs" id="tabs">
+          <button class="tab active" data-filter="all">⚡ All</button>
+          <button class="tab" data-filter="fav">⭐ Favorit</button>
+          <button class="tab" data-filter="downloader">⬇️ Downloader</button>
+          <button class="tab" data-filter="maker">🎨 Maker</button>
+          <button class="tab" data-filter="tools">🛠️ Tools</button>
+          <button class="tab" data-filter="fun">🎲 Fun</button>
+        </div>
+        <div class="search-box">
+          <span>🔍</span>
+          <input type="text" id="searchInput" placeholder="Cari tools… (tekan / buat lompat ke sini)" autocomplete="off" />
+          <kbd class="sb-kbd">/</kbd>
+        </div>
+      </div>
+
+      <div id="recentRow" class="recent-row" hidden></div>
+      <div class="grid" id="toolsGrid"></div>
+      <div class="empty-state" id="emptyState" hidden>
+        <span>🕳️</span>
+        <p>Yah, ga ketemu… coba kata kunci lain</p>
+      </div>
+    </section>
+
+    <!-- ====================== VISITOR RADAR ====================== -->
+    <section id="info">
+      <div class="section-head rv">
+        <span class="sh-kicker">📡 radar pengunjung</span>
+        <h2>Deteksi <span class="grad-text">Pengunjung</span></h2>
+        <p>Kebaca otomatis dari koneksi & browser kamu. Santai, cuma tampil — ga disimpan ke mana-mana.</p>
+      </div>
+      <div class="term-window rv">
+        <div class="term-bar">
+          <span class="td r"></span><span class="td y"></span><span class="td g"></span>
+          <span class="term-title">kyy@localhost:~$ scan --visitor --live</span>
+        </div>
+        <div class="info-grid">
+          <div class="info-card">
+            <span class="info-icon">🌍</span>
+            <div><label>Negara</label><b id="infCountry">Mendeteksi…</b></div>
+          </div>
+          <div class="info-card">
+            <span class="info-icon">💻</span>
+            <div><label>Device</label><b id="infDevice">—</b></div>
+          </div>
+          <div class="info-card">
+            <span class="info-icon">🌐</span>
+            <div><label>Browser</label><b id="infBrowser">—</b></div>
+          </div>
+          <div class="info-card">
+            <span class="info-icon">⚙️</span>
+            <div><label>Sistem Operasi</label><b id="infOs">—</b></div>
+          </div>
+          <div class="info-card">
+            <span class="info-icon">🏙️</span>
+            <div><label>Kota</label><b id="infCity">—</b></div>
+          </div>
+          <div class="info-card">
+            <span class="info-icon">🔢</span>
+            <div><label>Alamat IP</label><b id="infIp">—</b></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= DEVELOPER ======================= -->
+    <section id="dev">
+      <div class="section-head rv">
+        <span class="sh-kicker">👑 sang developer</span>
+        <h2>Yang Menciptakan <span class="grad-text">Web Ini</span></h2>
+      </div>
+      <div class="dev-card glass rv">
+        <div class="dev-avatar">
+          <img src="img/dev.png" alt="Rifkyy sensei" />
+          <span class="dev-ring"></span>
+        </div>
+        <div class="dev-info">
+          <div class="dev-badge">👑 SANG GOD OF DEATH</div>
+          <h2>Rifkyy <span class="grad-text">sensei</span></h2>
+          <p>
+            Gabut yang produktif. Awalnya cuma iseng bongkar scraper bot WhatsApp,
+            eh keterusan jadi web sekalian. Versi 6 ini dapet suntikan fitur baru hasil
+            ngulik repo GitHub: InnerTube YouTube, pemburu client_id SoundCloud, kurs live,
+            crypto & masih banyak lagi. Semua gratis, ga bakal minta login apalagi bayar.
+            Kalo ada scraper yang ngambek, wajar — medsos emang rewel 😤
+          </p>
+          <div class="dev-tags">
+            <span>#alltoolkyy</span><span>#dari-bot-jadi-web</span><span>#scraper-hunter</span><span>#autodidak</span><span>#136-tools</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================= FOOTER ============================ -->
+  <footer>
+    <div class="foot-mark" aria-hidden="true">
+      <div class="mq-track">
+        <span>KYY TOOLS ⚡ KYY TOOLS ⚡ KYY TOOLS ⚡ KYY TOOLS ⚡ </span><span>KYY TOOLS ⚡ KYY TOOLS ⚡ KYY TOOLS ⚡ KYY TOOLS ⚡ KYY TOOLS ⚡ </span>
+      </div>
+    </div>
+    <div class="foot-inner">
+      <img src="img/logo.png" alt="KYY" class="foot-logo" />
+      <p>© 2026 <b>All Tools KYY</b> — dirakit capek-capek sama <b>Rifkyy sensei</b> 💜</p>
+      <p class="foot-note" id="footFun"></p>
+      <p class="foot-note">Dipake buat hal baik ya — download konten sendiri/hak kamu, jangan reupload karya orang sembarangan ⚖️</p>
+    </div>
+  </footer>
+
+  <!-- ========================== MODAL ============================ -->
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <div class="modal glass" role="dialog" aria-modal="true">
+      <div class="modal-head">
+        <h3 id="modalTitle">Tool</h3>
+        <button class="modal-close" id="modalClose" aria-label="Tutup">✕</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- ========================== TOAST ============================ -->
+  <div class="toast-wrap" id="toastWrap"></div>
+
+  <!-- ===================== MOBILE DOCK FAB ======================= -->
+  <nav class="dock" aria-label="Navigasi cepat">
+    <a href="#top" class="dock-btn" title="Ke atas">🏠</a>
+    <a href="#tools" class="dock-btn" title="Semua tools">🧰</a>
+    <button class="dock-btn main" id="dockRandom" title="Tool random">🎲</button>
+    <button class="dock-btn" id="dockPalette" title="Palette (Ctrl+K)">⌘K</button>
+    <button class="dock-btn" id="dockTop" title="Gulir ke atas">⬆</button>
+  </nav>
+
+  <!-- ====================== TOMBOL INSTALL PWA ==================== -->
+  <button id="installBtn" hidden>📲 Install KYY Tools</button>
+
+  <script src="js/app.js?v=62"></script>
+  <script src="js/void.js?v=62"></script>
+</body>
+</html>
