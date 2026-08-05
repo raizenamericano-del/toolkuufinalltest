@@ -2,7 +2,7 @@
    ⚡ ALL TOOLS KYY — v6 ADD-ONS
    Di-load SETELAH app.js -> ikut pakai helper global ($, $$, api, toast,
    copyText, esc, errBox, downloadDataUrl, openTool, renderGrid, TOOLS,
-   TOOL_UI). Isi: 21 tools baru + Command Palette (Ctrl+K) + dock mobile.
+   TOOL_UI). Isi: 21 tools baru + Command Palette (Ctrl+K).
    ========================================================================== */
 
 // anti dobel-load
@@ -1287,13 +1287,6 @@ renderGrid();
   });
 
   $('#paletteBtn')?.addEventListener('click', openP);
-  $('#dockPalette')?.addEventListener('click', openP);
-})();
-
-/* ============================ DOCK MOBILE WIRING ========================== */
-(() => {
-  $('#dockRandom')?.addEventListener('click', () => $('#randomToolBtn')?.click());
-  $('#dockTop')?.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
 })();
 
 /* ==================== TOOLS PAKET SULTAN (v6.1 — 15 fitur) ================= */
